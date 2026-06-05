@@ -3,7 +3,7 @@
 
 <div class="container">
 	<header class="blog-header">
-		<h1 class="blog-title">hiro's tech blog</h1>
+		<h1 class="blog-title">Data & AI Horizon</h1>
 		<p class="blog-subtitle">生成AI×データサイエンス</p>
 	</header>
 
@@ -32,143 +32,193 @@
 </div>
 
 <style>
+<style>
+	/* デフォルトはダークモード */
 	:root {
-		--bg-color: #ffffff;
-		--text-color: #333333;
-		--primary-color: #007bff;
-		--card-bg-color: #f8f9fa;
-		--border-color: #e0e0e0;
-		--shadow-color: rgba(0, 0, 0, 0.05);
+		--bg-color: #20232a; /* 深いチャコールグレー */
+		--text-color: #e0e0e0; /* 明るいグレー */
+		--primary-color: #00bcd4; /* ネオンブルーのアクセントカラー */
+		--card-bg-color: #2d333b; /* カードの背景色 */
+		--border-color: #444951; /* カードや要素のボーダー色 */
+		--shadow-color: rgba(0, 0, 0, 0.4); /* 暗い影 */
 	}
 
-	@media (prefers-color-scheme: dark) {
+	/* ライトモードの場合のスタイル上書き */
+	@media (prefers-color-scheme: light) {
 		:root {
-			--bg-color: #282c34;
-			--text-color: #e0e0e0;
-			--primary-color: #8ab4f8;
-			--card-bg-color: #3a3f4a;
-			--border-color: #444951;
-			--shadow-color: rgba(0, 0, 0, 0.2);
+			--bg-color: #ffffff; /* 清潔感のある白 */
+			--text-color: #333333; /* 濃いグレー */
+			--primary-color: #007bff; /* 標準的な青のアクセントカラー */
+			--card-bg-color: #f8f9fa; /* カードの背景色 */
+			--border-color: #e0e0e0; /* カードや要素のボーダー色 */
+			--shadow-color: rgba(0, 0, 0, 0.05); /* 薄い影 */
 		}
 	}
 
-	.container {
-		max-width: 960px;
-		margin: 0 auto;
-		padding: 2rem 1rem;
-		font-family: 'Segoe UI', 'Roboto', 'Helvetica Neue', Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol';
-		color: var(--text-color);
+	body {
+		margin: 0;
+		padding: 0;
 		background-color: var(--bg-color);
+		color: var(--text-color);
+		font-family: 'Roboto', 'Noto Sans JP', 'Segoe UI', 'Helvetica Neue', Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol';
 		line-height: 1.6;
+		transition: background-color 0.3s ease, color 0.3s ease;
+	}
+
+	.container {
+		max-width: 1000px;
+		margin: 0 auto;
+		padding: 3rem 1.5rem;
 	}
 
 	.blog-header {
 		text-align: center;
-		margin-bottom: 3rem;
+		margin-bottom: 4rem;
+		padding-top: 2rem;
 	}
 
 	.blog-title {
-		font-size: 3.5rem;
-		font-weight: 700;
+		font-size: 4.5rem;
+		font-weight: 800;
 		margin: 0;
 		color: var(--primary-color);
-		letter-spacing: -0.05em;
+		letter-spacing: -0.08em;
+		text-shadow: 0 0 15px var(--primary-color), 0 0 30px var(--primary-color);
+		transition: color 0.3s ease, text-shadow 0.3s ease;
 	}
 
 	.blog-subtitle {
-		font-size: 1.5rem;
+		font-size: 1.8rem;
 		color: var(--text-color);
-		margin-top: 0.5rem;
+		margin-top: 1rem;
 		opacity: 0.8;
+		font-weight: 300;
 	}
 
 	section {
-		margin-bottom: 3rem;
+		margin-bottom: 4rem;
 	}
 
 	h2 {
-		font-size: 2rem;
-		font-weight: 600;
-		margin-bottom: 1.5rem;
+		font-size: 2.2rem;
+		font-weight: 700;
+		margin-bottom: 2rem;
 		color: var(--text-color);
-		border-bottom: 2px solid var(--primary-color);
-		padding-bottom: 0.5rem;
+		position: relative;
+		padding-bottom: 0.8rem;
+	}
+
+	h2::after {
+		content: '';
+		position: absolute;
+		left: 0;
+		bottom: 0;
+		width: 80px;
+		height: 4px;
+		background-color: var(--primary-color);
+		border-radius: 2px;
 	}
 
 	.card {
 		background-color: var(--card-bg-color);
-		border-radius: 12px;
-		padding: 2rem;
-		box-shadow: 0 4px 12px var(--shadow-color);
+		border-radius: 15px;
+		padding: 2.5rem;
+		box-shadow: 0 8px 25px var(--shadow-color);
 		border: 1px solid var(--border-color);
+		transition: background-color 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
 	}
 
 	.profile-section p {
-		font-size: 1.1rem;
-		line-height: 1.8;
+		font-size: 1.15rem;
+		line-height: 1.9;
+		color: var(--text-color);
 	}
 
 	.latest-posts-section .post-cards {
 		display: grid;
-		grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-		gap: 1.5rem;
+		grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+		gap: 2rem;
 	}
 
 	.post-card {
 		background-color: var(--card-bg-color);
-		border-radius: 12px;
-		padding: 1.5rem;
-		box-shadow: 0 2px 8px var(--shadow-color);
+		border-radius: 15px;
+		padding: 2rem;
+		box-shadow: 0 4px 15px var(--shadow-color);
 		border: 1px solid var(--border-color);
-		transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+		transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out, background-color 0.3s ease, border-color 0.3s ease;
+		display: flex;
+		flex-direction: column;
+		justify-content: space-between;
 	}
 
 	.post-card:hover {
-		transform: translateY(-5px);
-		box-shadow: 0 6px 16px var(--shadow-color);
+		transform: translateY(-8px);
+		box-shadow: 0 12px 25px var(--shadow-color);
 	}
 
 	.post-card h3 {
-		font-size: 1.3rem;
-		font-weight: 600;
+		font-size: 1.5rem;
+		font-weight: 700;
 		margin-top: 0;
-		margin-bottom: 0.5rem;
+		margin-bottom: 1rem;
 		color: var(--primary-color);
+		line-height: 1.4;
 	}
 
 	.post-card p {
-		font-size: 0.95rem;
+		font-size: 1rem;
 		color: var(--text-color);
 		opacity: 0.7;
+		margin-bottom: 0;
 	}
 
+	/* レスポンシブデザイン */
 	@media (max-width: 768px) {
+		.container {
+			padding: 2rem 1rem;
+		}
+
 		.blog-title {
-			font-size: 2.5rem;
+			font-size: 3.5rem;
 		}
 
 		.blog-subtitle {
-			font-size: 1.2rem;
+			font-size: 1.5rem;
 		}
 
 		h2 {
-			font-size: 1.7rem;
+			font-size: 1.8rem;
+			margin-bottom: 1.5rem;
+		}
+
+		h2::after {
+			width: 60px;
+			height: 3px;
 		}
 
 		.card {
-			padding: 1.5rem;
+			padding: 2rem;
 		}
 
 		.profile-section p {
-			font-size: 1rem;
+			font-size: 1.05rem;
+		}
+
+		.latest-posts-section .post-cards {
+			grid-template-columns: 1fr; /* スマホでは縦並び */
 		}
 
 		.post-card {
-			padding: 1.2rem;
+			padding: 1.5rem;
 		}
 
 		.post-card h3 {
-			font-size: 1.1rem;
+			font-size: 1.25rem;
+		}
+
+		.post-card p {
+			font-size: 0.9rem;
 		}
 	}
 
@@ -178,11 +228,12 @@
 		}
 
 		.blog-title {
-			font-size: 2rem;
+			font-size: 2.8rem;
+			letter-spacing: -0.05em;
 		}
 
 		.blog-subtitle {
-			font-size: 1rem;
+			font-size: 1.2rem;
 		}
 
 		h2 {
