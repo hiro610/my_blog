@@ -1,4 +1,8 @@
 ---
+import { getCollection } from 'astro:content';
+
+const allPosts = await getCollection('blog');
+const sortedPosts = allPosts.sort((a, b) => b.data.pubDate.getTime() - a.data.pubDate.getTime());
 ---
 
 <div class="container">
@@ -15,18 +19,12 @@
 	<section class="latest-posts-section">
 		<h2>新着記事一覧</h2>
 		<div class="post-cards">
-			<article class="post-card">
-				<h3>[ダミー] 最新の生成AIモデルを徹底解説</h3>
-				<p>2024-06-06</p>
-			</article>
-			<article class="post-card">
-				<h3>[ダミー] Pythonで始めるデータ分析入門</h3>
-				<p>2024-06-05</p>
-			</article>
-			<article class="post-card">
-				<h3>[ダミー] SQLでデータ抽出！基本から応用まで</h3>
-				<p>2024-06-04</p>
-			</article>
+			{sortedPosts.map((post) => (
+				<article class="post-card">
+					<h3><a href={`/blog/${post.slug}`}>{post.data.title}</a></h3>
+					<p>{post.data.pubDate.toLocaleDateString('ja-JP', { year: 'numeric', month: '2-digit', day: '2-digit' })}</p>
+				</article>
+			))}
 		</div>
 	</section>
 </div>
