@@ -21,7 +21,7 @@ const sortedPosts = allPosts.sort((a, b) => b.data.pubDate.getTime() - a.data.pu
 		<div class="post-cards">
 			{sortedPosts.map((post) => (
 				<article class="post-card">
-					<h3><a href={`/blog/${post.slug}`}>{post.data.title}</a></h3>
+					<h3><a href={`/blog/${post.id}`}>{post.data.title}</a></h3>
 					<p>{post.data.pubDate.toLocaleDateString('ja-JP', { year: 'numeric', month: '2-digit', day: '2-digit' })}</p>
 				</article>
 			))}
