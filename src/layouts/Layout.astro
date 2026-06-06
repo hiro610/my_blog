@@ -1,12 +1,25 @@
+---
+interface Props {
+  title?: string;
+  description?: string;
+}
+
+const { title, description } = Astro.props;
+const siteTitle = "Data & AI Horizon";
+const defaultDescription = "生成AIとデータサイエンスに関する最新情報を発信するテックブログ。";
+---
+
 <!doctype html>
-<html lang="en">
+<html lang="ja">
 	<head>
 		<meta charset="UTF-8" />
 		<meta name="viewport" content="width=device-width" />
 		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
 		<link rel="icon" href="/favicon.ico" />
 		<meta name="generator" content={Astro.generator} />
-		<title>Astro Basics</title>
+		<title>{title ? `${title} | ${siteTitle}` : siteTitle}</title>
+		{description && <meta name="description" content={description} />}
+		{!description && <meta name="description" content={defaultDescription} />}
 		<script async src="https://www.googletagmanager.com/gtag/js?id=G-VJP6M18HZZ"></script>
 		<script is:inline>
 			window.dataLayer = window.dataLayer || [];
