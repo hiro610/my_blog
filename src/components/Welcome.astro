@@ -14,6 +14,7 @@ const sortedPosts = allPosts.sort((a, b) => b.data.pubDate.getTime() - a.data.pu
 	<section class="profile-section card">
 		<h2>運営者 hiro のプロフィール</h2>
 		<p>データサイエンスと生成AIを専門とするhiroです。このブログでは、最新のAI技術からデータ分析のノウハウまで、幅広く情報発信していきます。</p>
+		<p class="disclosure">※このサイトはアフィリエイト広告（Amazonアソシエイト含む）を掲載しています。</p>
 	</section>
 
 	<section class="latest-posts-section">
@@ -131,6 +132,15 @@ const sortedPosts = allPosts.sort((a, b) => b.data.pubDate.getTime() - a.data.pu
 		color: var(--text-color);
 	}
 
+	/* Amazon審査用：ディスクロージャー文のスタイリング */
+	.profile-section .disclosure {
+		font-size: 0.9rem;
+		opacity: 0.6;
+		margin-top: 1.5rem;
+		border-top: 1px dashed var(--border-color);
+		padding-top: 1rem;
+	}
+
 	.latest-posts-section .post-cards {
 		display: grid;
 		grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
@@ -203,7 +213,7 @@ const sortedPosts = allPosts.sort((a, b) => b.data.pubDate.getTime() - a.data.pu
 		}
 
 		.latest-posts-section .post-cards {
-			grid-template-columns: 1fr; /* スマホでは縦並び */
+			grid-template-columns: 1fr;
 		}
 
 		.post-card {
