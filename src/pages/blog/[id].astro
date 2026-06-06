@@ -28,29 +28,36 @@ const { Content } = await render(post);
     <div class="post-content">
       <Content />
     </div>
+    <div class="back-to-home">
+        <a href="/" class="home-link-button">ホームへ戻る</a>
+    </div>
   </div>
 
   <style>
+    /* ルート変数は Welcome.astro から継承されるため、ここでは主に記事固有のスタイルを定義します */
+
     .post-container {
       max-width: 800px;
       margin: 4rem auto;
-      padding: 2rem;
+      padding: 3rem; /* パディングを増やす */
       background-color: var(--card-bg-color);
       border-radius: 15px;
       box-shadow: 0 8px 25px var(--shadow-color);
       border: 1px solid var(--border-color);
+      transition: background-color 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
     }
 
     .post-header {
       text-align: center;
-      margin-bottom: 3rem;
+      margin-bottom: 3.5rem; /* マージンを調整 */
     }
 
     .post-title {
-      font-size: 3rem;
+      font-size: 3.2rem; /* フォントサイズを微調整 */
       font-weight: 800;
       color: var(--primary-color);
       margin-bottom: 1rem;
+      line-height: 1.3; /* 行間を調整 */
     }
 
     .post-meta {
@@ -60,71 +67,137 @@ const { Content } = await render(post);
     }
 
     .post-meta span {
-      margin: 0 0.5rem;
+      margin: 0 0.6rem; /* スペースを微調整 */
     }
 
     .post-content {
-      line-height: 1.8;
-      font-size: 1.1rem;
+      line-height: 2; /* 行間を広げて読みやすく */
+      font-size: 1.15rem; /* フォントサイズを少し大きく */
       color: var(--text-color);
+      /* 全体のタイポグラフィの読みやすさ向上 */
     }
 
     .post-content h1, .post-content h2, .post-content h3, .post-content h4, .post-content h5, .post-content h6 {
       color: var(--primary-color);
-      margin-top: 2rem;
-      margin-bottom: 1rem;
+      margin-top: 2.5rem; /* 見出し上のマージンを増やす */
+      margin-bottom: 1.5rem; /* 見出し下のマージンを増やす */
       padding-bottom: 0.5rem;
-      border-bottom: 1px solid var(--border-color);
+      /* border-bottom: 1px solid var(--border-color); */ /* 縦線のために削除または調整 */
+    }
+
+    /* h2とh3にスタイリッシュな縦線を追加 */
+    .post-content h2, .post-content h3 {
+      border-left: 5px solid var(--primary-color); /* アクセントカラーの縦線 */
+      padding-left: 1rem; /* 縦線とテキストの間にスペース */
+      border-bottom: none; /* 下線を削除し、縦線に集中させる */
+      padding-bottom: 0; /* 下線に伴うパディングも削除 */
+      display: flex; /* 必要に応じてflexboxを使用し、縦線とテキストの配置を調整 */
+      align-items: center; /* 垂直方向中央揃え */
+    }
+
+    .post-content h2 {
+      font-size: 2rem;
+    }
+
+    .post-content h3 {
+      font-size: 1.6rem;
     }
 
     .post-content p {
-        margin-bottom: 1em;
+        margin-bottom: 1.5em; /* 段落間の余白を増やす */
     }
 
     .post-content ul, .post-content ol {
-        margin-left: 1.5rem;
-        margin-bottom: 1em;
+        margin-left: 2rem; /* リストのインデントを調整 */
+        margin-bottom: 1.5em; /* リスト下の余白を増やす */
+        line-height: 1.8; /* リスト項目も読みやすく */
+    }
+
+    .post-content li {
+        margin-bottom: 0.5em; /* リスト項目間の余白 */
     }
 
     .post-content code {
         background-color: var(--border-color);
-        border-radius: 4px;
-        padding: 0.2em 0.4em;
+        border-radius: 6px; /* 角丸を少し大きく */
+        padding: 0.25em 0.5em; /* パディングを調整 */
         font-family: 'Fira Code', 'Cascadia Code', 'Source Code Pro', monospace;
-        font-size: 0.9em;
+        font-size: 0.95em; /* 少し大きく */
     }
 
     .post-content pre {
         background-color: var(--bg-color);
-        border-radius: 8px;
-        padding: 1rem;
+        border-radius: 10px; /* 角丸を大きく */
+        padding: 1.2rem; /* パディングを増やす */
         overflow-x: auto;
-        margin-bottom: 1.5em;
+        margin-bottom: 2em; /* コードブロック下の余白を増やす */
+        border: 1px solid var(--border-color); /* ボーダーを追加 */
     }
 
+    .back-to-home {
+      text-align: center;
+      margin-top: 4rem; /* 記事コンテンツとの間に十分な余白 */
+    }
+
+    .home-link-button {
+      display: inline-block;
+      padding: 1rem 2rem;
+      background-color: var(--primary-color);
+      color: var(--bg-color); /* ボタンテキストは背景色 */
+      text-decoration: none;
+      border-radius: 8px;
+      font-weight: 600;
+      transition: background-color 0.3s ease, transform 0.2s ease, box-shadow 0.3s ease;
+      box-shadow: 0 4px 12px var(--shadow-color);
+    }
+
+    .home-link-button:hover {
+      background-color: #00a4bd; /* ホバー時の色を微調整 */
+      transform: translateY(-3px);
+      box-shadow: 0 8px 20px var(--shadow-color);
+    }
+
+    /* レスポンシブデザイン */
     @media (max-width: 768px) {
       .post-container {
         margin: 2rem auto;
-        padding: 1.5rem;
+        padding: 2rem;
       }
       .post-title {
-        font-size: 2.2rem;
+        font-size: 2.5rem;
       }
       .post-meta {
         font-size: 0.9rem;
       }
       .post-content {
         font-size: 1rem;
+        line-height: 1.8;
+      }
+      .post-content h2 {
+        font-size: 1.7rem;
+      }
+      .post-content h3 {
+        font-size: 1.4rem;
+      }
+      .home-link-button {
+        padding: 0.8rem 1.5rem;
+        font-size: 0.9rem;
       }
     }
 
     @media (max-width: 480px) {
       .post-container {
         margin: 1rem auto;
-        padding: 1rem;
+        padding: 1.5rem;
       }
       .post-title {
-        font-size: 1.8rem;
+        font-size: 2rem;
+      }
+      .post-content h2 {
+        font-size: 1.5rem;
+      }
+      .post-content h3 {
+        font-size: 1.2rem;
       }
     }
   </style>
