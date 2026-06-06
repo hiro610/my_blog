@@ -59,8 +59,10 @@ author: hiro
 
 ### 1. 達人に学ぶSQL徹底指南書
 データサイエンティストにとってSQLは空気のような存在ですが、本書は一歩進んだ「手続き型から集合論的思考へのパラダイムシフト」を教えてくれます。フェーズ2での高度なテーブル設計の基礎となります。
+
 <a href="//af.moshimo.com/af/c/click?a_id=5624194&amp;p_id=54&amp;pc_id=54&amp;pl_id=616&amp;url=https%3A%2F%2Fitem.rakuten.co.jp%2Fbook%2F15596931%2F&amp;m=http%3A%2F%2Fm.rakuten.co.jp%2Fbook%2Fi%2F19281336%2F" rel="nofollow" referrerpolicy="no-referrer-when-downgrade"><img src="//thumbnail.image.rakuten.co.jp/@0_mall/book/cabinet/7825/9784798157825.jpg?_ex=75x75" alt="" style="border: none;" /><br>達人に学ぶSQL徹底指南書 第2版 初級者で終わりたくないあなたへ （CodeZine BOOKS） [ ミック ]</a><img src="//i.moshimo.com/af/i/impression?a_id=5624194&amp;p_id=54&amp;pc_id=54&amp;pl_id=616" alt="" loading="lazy" width="1" height="1" style="border: 0px;">
 
 ### 2. Kaggleで勝つデータ分析の技術
 フェーズ5での予測モデル構築、特徴量エンジニアリングにおいて、実務とコンペの架け橋となってくれる実践的な一冊です。
+
 <a href="//af.moshimo.com/af/c/click?a_id=5624194&amp;p_id=54&amp;pc_id=54&amp;pl_id=616&amp;url=https%3A%2F%2Fitem.rakuten.co.jp%2Fbook%2F16042265%2F&amp;m=http%3A%2F%2Fm.rakuten.co.jp%2Fbook%2Fi%2F19759104%2F" rel="nofollow" referrerpolicy="no-referrer-when-downgrade"><img src="//thumbnail.image.rakuten.co.jp/@0_mall/book/cabinet/8434/9784297108434.jpg?_ex=75x75" alt="" style="border: none;" /><br>Kaggleで勝つデータ分析の技術 [ 門脇大輔 ]</a><img src="//i.moshimo.com/af/i/impression?a_id=5624194&amp;p_id=54&amp;pc_id=54&amp;pl_id=616" alt="" loading="lazy" width="1" height="1" style="border: 0px;">
