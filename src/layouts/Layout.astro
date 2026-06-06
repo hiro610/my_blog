@@ -7,6 +7,14 @@
 		<link rel="icon" href="/favicon.ico" />
 		<meta name="generator" content={Astro.generator} />
 		<title>Astro Basics</title>
+		<script async src="https://www.googletagmanager.com/gtag/js?id=G-VJP6M18HZZ"></script>
+		<script is:inline>
+			window.dataLayer = window.dataLayer || [];
+			function gtag(){dataLayer.push(arguments);}
+			gtag('js', new Date());
+
+			gtag('config', 'G-VJP6M18HZZ');
+		</script>
 	</head>
 	<body>
 		<slot />
